@@ -1,0 +1,113 @@
+.main {
+        flex-grow: 1;
+        
+        padding: 30px;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+
+      .header h1 {
+        font-size: 28px;
+      }
+
+      .toggle-btn {
+        position: absolute;
+        display: none;
+        top: 5px;
+        right: 5px;
+        font-size: 18px;
+        background: none;
+        border: none;
+        color: #0076d7;
+        cursor: pointer;
+      }
+
+      .prescription-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      .prescription-card {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 5px;
+      }
+
+      .medication-name {
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .dosage {
+        font-size: 14px;
+        color: #555;
+      }
+
+      .card-details p {
+        margin: 5px 0;
+        font-size: 14px;
+      }
+
+      .instructions {
+        margin-top: 10px;
+        font-style: italic;
+        color: #777;
+      }
+
+      .card-footer {
+        margin-top: 15px;
+        text-align: right;
+      }
+
+      .button {
+        background-color: #007bff;
+        color: white;
+        padding: 8px 14px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .button:hover {
+        background-color: #0056b3;
+      }
+
+      @media (max-width: 768px) {
+        .sidebar {
+          transform: translateX(-100%);
+          position: fixed;
+          height: 100%;
+        }
+
+        .sidebar.active {
+          transform: translateX(0);
+        }
+
+        .main {
+          margin-left: 0;
+          padding: 20px;
+        }
+
+        .toggle-btn {
+          display: block;
+        }
+
+        .container {
+          flex-direction: column;
+        }
+      }

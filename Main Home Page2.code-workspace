@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../WEBsite development"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "WEBsite development"
+	}
+}

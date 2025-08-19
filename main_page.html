@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediQ - Smarter Queues, Healthier Hospitals</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+
+    <header class="header">
+        <div class="container navbar">
+            <a href="#" class="logo"><img src="logo.png" alt="Logo"></a>
+            
+            <div class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <a href="signin.html" class="btn btn-outline">Login</a>
+                    <a href="signup.html" class="btn btn-solid">Signup</a>
+                </div>
+            </div>
+
+            <div class="mobile-login-wrapper">
+                 <a href="#" class="btn btn-outline">Login</a>
+                 <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+           
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Smarter Queues,<br>Healthier Hospitals</h1>
+                <p>Reduces patient flow with real-time queue management and automated appointment booking.</p>
+                <a href="signup.html" class="btn btn-solid btn-large">Book Appointment</a>
+            </div>
+            <div class="hero-image">
+                <img src="ChatGPT_Image_Jul_26__2025__11_55_43_AM-removebg-preview.png" alt="Doctor with patient illustration">
+            </div>
+        </section>
+
+        <section class="features" id="features">
+            <div class="feature-card">
+                <div class="feature-card-top"><i class="fas fa-users"></i>
+                <h3>Live Queue Tracking</h3></div>  
+                <p>Monitor patient queues in real-time with our smart system.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-card-top"><i class="fas fa-calendar-check"></i>
+                <h3>Smart Appointment</h3></div>
+                <p>Optimize scheduling with our intelligent booking system.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-card-top"><i class="fas fa-clock"></i>
+                <h3>Reduce Wait Times</h3></div>
+                <p>Minimize patient wait times with efficient scheduling.</p>
+            </div>
+
+        </section>
+
+        <div class="About" id="About">
+          <div class="left">
+            <h1>About Us</h1>
+            <p>
+              MediQ is an innovative solution designed to improve the hospital waiting experience for patients and streamline queue management for healthcare staff. It eliminates long waiting lines, reduces physical crowding, and provides a more organized way to handle appointments.
+              <br>
+              <br>
+Our system integrates digital tokens, real-time queue updates, and department-wise patient flow tracking, offering convenience to both patients and hospitals. Whether you're visiting a general physician, lab, or specialist, MediQ ensures you are informed, scheduled, and attended to in a timely manner.
+            </p>
+          </div>
+          <div class="right"><img src="Webpage_Layput-removebg-preview.png" alt=""></div>
+        </div>
+
+
+
+        <div class="Contact" id="Contact">
+          <div class="left"><img src="Contact_US-removebg-preview.png" alt="Contact image"></div>
+          <div class="inner">
+            <form action="" id="mediQ-form">
+              <div class="box">
+              <label for="Name">Name:</label>
+              <input type="text" name="Name"id="Name" required></div>
+              <div class="box">
+              <label for="Email">Email:</label>
+              <input type="text" name="Email" id="Email">
+              </div>
+              <div class="box">
+              <label for="Phone">Phone Number:</label>
+              <input type="tel" name="Phone" id="Phone" required>
+              </div>
+              <div class="box">
+              <label for="Message">Message</label>
+              <textarea name="Message" id="Message" cols="30" rows="10" placeholder=""></textarea>
+              </div>
+              <button type="submit" class="btn btn-solid btn-large">Submit</button>
+ 
+            </form>
+          </div>
+        </div>
+        
+    </main>
+    <footer class="footer">
+  <div class="footer-container">
+    
+    <!-- Logo & Description -->
+    <div class="footer-section">
+      <img src="logo.png" alt="MediQ Logo" class="Logo" style="width: 150px; height: 150px;">
+      <p class="footer-desc">Smarter Queues, Healthier Hospitals. Book appointments and manage queues with ease.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h4 class="footer-title">Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="about">About Us</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#Contact">Contact</a></li>
+        <li><a href="faq">FAQs</a></li>
+      </ul>
+    </div>
+
+    <!-- Services -->
+    <div class="footer-section">
+      <h4 class="footer-title">Services</h4>
+      <ul class="footer-links">
+        <li><a href="/live-queue">Prescriptions</a></li>
+        <li><a href="/appointments">Book Appointment</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-section">
+      <h4 class="footer-title">Contact</h4>
+      <p class="contact-info">📧 support@mediq.com</p>
+      <p class="contact-info">📞 +91 98765 43210</p>
+      <div class="footer-socials">
+       <!-- <a href="#"><img src="facebook-icon.png" alt="FB" width="24"></a>
+        <a href="#"><img src="linkedin-icon.png" alt="IN" width="24"></a>-->
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 MediQ. All rights reserved.
+  </div>
+</footer>
+
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+
+        });
+        
+  const form = document.getElementById('mediQ-form');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // prevent page reload
+
+    // Get form values
+    const name = document.getElementById('Name').value;
+    const email = document.getElementById('Email').value;
+    const message = document.getElementById('Message').value;
+    const contactData = {                                    
+    name: name,
+    email: email,
+    message: message,
+  };
+  let contactList = JSON.parse(localStorage.getItem("contactMessages")) || [];
+  contactList.push(contactData);
+  localStorage.setItem("contactMessages", JSON.stringify(contactList));
+  form.reset(); 
+  alert("Your message has been saved!");            
+});
+    </script>
+
+</body>
+</html>

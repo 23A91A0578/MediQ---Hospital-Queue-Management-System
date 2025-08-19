@@ -1,0 +1,138 @@
+/* Main content */
+      .main {
+        flex: 1;
+        padding: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow-y: auto;
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+
+      .topbar h1 {
+        font-size: 28px;
+        color: #333;
+      }
+
+      .dashboard-cards {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+      }
+
+      .card {
+        background-color: #fff;
+        padding: 20px;
+        flex: 1;
+        min-width: 200px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .card h3 {
+        font-size: 16px;
+        color: #888;
+        margin-bottom: 10px;
+      }
+
+      .card p {
+        font-size: 24px;
+        color: #0076d7;
+      }
+
+      /* Table */
+      .appointments-table {
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        padding: 20px;
+      }
+
+      .appointments-table h2 {
+        margin-bottom: 20px;
+        color: #0076d7;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+      }
+
+      th {
+        background-color: #f0f4f8;
+        color: #333;
+      }
+
+      tr:hover {
+        background-color: #f9fbfd;
+      }
+      .container {
+        width: 95%;
+        height: 95%;
+
+        border-radius: 20px;
+        position: relative;
+        padding: 15px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+      }
+      .edit {
+        position: absolute;
+        display: block;
+        color: white;
+        background-color: #0076d7;
+        border-radius: 5px;
+        padding: 5px 10px;
+        right: 10px;
+        top: 10px;
+        border: none;
+      }
+      .box-profile {
+        display: flex;
+        height: 30%;
+        align-items: center;
+      }
+      .box-profile div {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .box-profile img {
+        height: 100%;
+        border-radius: 50%;
+      }
+      .box-profile p {
+        font-size: 36px;
+      }
+      .profile-box {
+        display: flex;
+        flex-direction: column;
+        border: 0.8px solid rgb(201, 196, 196);
+        border-top: none;
+      }
+      .profile-box div {
+        display: flex;
+        border-top: 0.8px solid rgb(201, 196, 196);
+        padding-left: 20px;
+      }
+      .profile-info > p {
+        font-size: 24px;
+      }
+      .l-text {
+        width: 50%;
+        font-weight: bold;
+      }

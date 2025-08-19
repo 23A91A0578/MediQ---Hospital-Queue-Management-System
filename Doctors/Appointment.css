@@ -1,0 +1,79 @@
+/* Main content */
+      .main {
+        flex: 1;
+        padding: 30px;
+        overflow-y: auto;
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+
+      .topbar h1 {
+        font-size: 28px;
+        color: #333;
+      }
+
+      .dashboard-cards {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+      }
+
+      .card {
+        background-color: #fff;
+        padding: 20px;
+        flex: 1;
+        min-width: 200px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .card h3 {
+        font-size: 16px;
+        color: #888;
+        margin-bottom: 10px;
+      }
+
+      .card p {
+        font-size: 24px;
+        color: #0076d7;
+      }
+
+      /* Table */
+      .appointments-table {
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        padding: 20px;
+      }
+
+      .appointments-table h2 {
+        margin-bottom: 20px;
+        color: #0076d7;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+      }
+
+      th {
+        background-color: #f0f4f8;
+        color: #333;
+      }
+
+      tr:hover {
+        background-color: #f9fbfd;
+      }

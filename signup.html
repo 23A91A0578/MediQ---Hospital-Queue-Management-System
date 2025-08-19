@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MediQ Signup</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      body {
+        background-color: #f5f7fa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+
+      .signup-container {
+        display: flex;
+        max-width: 1000px;
+        width: 100%;
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .signup-illustration {
+        flex: 1;
+        background-color: #e9f5ff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+      }
+
+      .signup-illustration img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .signup-form {
+        flex: 1;
+        padding: 40px;
+      }
+
+      .signup-form h2 {
+        color: #0076d7;
+        margin-bottom: 24px;
+        font-size: 28px;
+      }
+
+      .form-group {
+        margin-bottom: 16px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 14px;
+        color: #333;
+      }
+
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 12px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+      }
+
+      .form-group input:focus,
+      .form-group select:focus {
+        outline: none;
+        border-color: #0076d7;
+      }
+
+      .signup-btn {
+        background-color: #0076d7;
+        color: #fff;
+        border: none;
+        width: 100%;
+        padding: 12px;
+        border-radius: 12px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .signup-btn:hover {
+        background-color: #005bb5;
+      }
+
+      .login-link {
+        margin-top: 14px;
+        font-size: 14px;
+        text-align: center;
+      }
+
+      .login-link a {
+        color: #0076d7;
+        text-decoration: none;
+      }
+
+      @media (max-width: 768px) {
+        .signup-container {
+          flex-direction: column;
+        }
+
+        .signup-illustration {
+          display: none;
+        }
+
+        .signup-form {
+          padding: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="signup-container">
+      <div class="signup-illustration">
+        <img src="signup.png" alt="Medical Signup Illustration" />
+      </div>
+      <div class="signup-form">
+        <h2>Create Your MediQ Account</h2>
+        <form id="signup_form">
+          <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" required />
+          </div>
+          <div class="form-group">
+            <label for="role">Role</label>
+            <select id="role" required>
+              <option value="" disabled selected hidden>Select Role</option>
+              <option value="patient">Patient</option>
+              <option value="doctor">Doctor</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" required />
+          </div>
+          <div class="form-group">
+            <label for="confirm">Confirm Password</label>
+            <input type="password" id="confirm" required />
+          </div>
+          <button type="submit" class="signup-btn">Sign Up</button>
+          <div class="login-link">
+            Already have an account? <a href="signin.html">Login</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+      const form = document.getElementById("signup_form");
+      document.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const fullname = document.getElementById("fullname").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const role = document.getElementById("role").value;
+        const password = document.getElementById("password").value;
+        const confirm = document.getElementById("confirm").value;
+        if (password !== confirm) {
+          alert("Password mismatch");
+        } else {
+          const signupDetails = {
+            fullname: fullname,
+            email: email,
+            phone: phone,
+            role: role,
+            password: password,
+          };
+          let signupdata = JSON.parse(localStorage.getItem("signup")) || [];
+          let matchedUser = signupdata.find(
+            (user) => user.email === email || user.phone === phone
+          );
+          if (matchedUser) {
+            alert("Phone Number or email address already exists");
+          } else {
+            signupdata.push(signupDetails);
+            localStorage.setItem("signup", JSON.stringify(signupdata));
+            form.reset();
+            alert("Signup Successfull");
+            window.location.href = "signin.html";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MediQ Doctor Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link id="page-style" rel="stylesheet" href="dashboard.css" />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Poppins";
+        background-color: #f5f7fa;
+      }
+
+      .dashboard-container {
+        display: flex;
+        height: 100vh;
+      }
+
+      /* Sidebar */
+      .sidebar {
+        width: 220px;
+        background-color: #0076d7;
+        color: #fff;
+        display: flex;
+        text-align: left;
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      .sidebar h2 {
+        font-size: 22px;
+        margin-bottom: 40px;
+      }
+
+      .sidebar a {
+        color: #fff;
+        text-decoration: none;
+        margin-bottom: 18px;
+        display: block;
+        font-size: 20px;
+        text-align: left;
+      }
+
+      .sidebar img {
+        width: 90%;
+      }
+
+      .sidebar a:hover {
+        text-decoration: none;
+      }
+
+      .off {
+        color: white;
+        background-color: none;
+      }
+
+      .on {
+        color: white;
+        background-color: rgb(2, 2, 78);
+        padding: 5px;
+      }
+
+      /* Toggle Button */
+      .toggle-btn {
+        display: none;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        color: blue;
+        background-color: #f5f7fa;
+        border: none;
+        font-size: 20px;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        z-index: 999;
+      }
+      .close-btn {
+        display: none;
+        font-size: 25px;
+        width: 35px;
+        height: 35px;
+      }
+      .logout a {
+        color: #ffb3b3;
+        text-decoration: none;
+        padding: 10px 0;
+        position: absolute;
+        bottom: 10px;
+
+        display: inline-block;
+      }
+
+      /* Responsive Sidebar */
+      @media (max-width: 768px) {
+        .sidebar {
+          position: fixed;
+          left: -250px;
+          top: 0;
+          height: 100%;
+          transition: left 0.3s ease;
+          z-index: 1000;
+        }
+
+        .sidebar.active {
+          left: 0;
+        }
+
+        .close-btn {
+          display: block;
+        }
+        .toggle-btn {
+          display: block;
+        }
+
+        .dashboard-container {
+          flex-direction: column;
+        }
+
+        .main {
+          margin-left: 0;
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Toggle Button -->
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+
+    <div class="dashboard-container">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <button class="close-btn" onclick="toggleSidebar()">&times;</button>
+        <img src="images/logo2.png" />
+        <a
+          onclick="change('.dashboard') ;loadContent('dashboard')"
+          class="off dashboard"
+          href="#"
+          ><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a
+        >
+        <a
+          onclick="change('.Appointments') ;loadContent('Appointment')"
+          class="off Appointments"
+          href="#"
+          ><i class="fa fa-calendar-check" aria-hidden="true"></i>
+          Appointments</a
+        >
+        <a
+          onclick="change('.Patients') ;loadContent('patients')"
+          class="off Patients"
+          href="#"
+          ><i class="fa fa-user" aria-hidden="true"></i> Patients</a
+        >
+        <a
+          onclick="change('.Settings') ;loadContent('setting')"
+          class="off Settings"
+          href="#"
+          ><i class="fa fa-cog" aria-hidden="true"></i> Settings</a
+        >
+        <div class="logout">
+          <a href="/main_page.html">⏎ Log out</a>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main"></div>
+    </div>
+
+    <script>
+      function change(current) {
+        let button = document.querySelector(current);
+        if (!button.classList.contains("on")) {
+          turn_off_all();
+          button.classList.add("on");
+        }
+      }
+
+      function turn_off_all() {
+        let button = document.querySelector(".on");
+        if (button) {
+          button.classList.remove("on");
+        }
+      }
+
+      function loadContent(page) {
+        // Load HTML
+        fetch(`${page}.html`)
+          .then((res) => res.text())
+          .then((html) => {
+            document.querySelector(".main").innerHTML = html;
+
+            // Load JS
+            const oldScript = document.getElementById("page-script");
+            if (oldScript) oldScript.remove();
+            const script = document.createElement("script");
+            script.src = `${page}.js`;
+            script.id = "page-script";
+
+            script.onload = () => {
+              if (typeof init === "function") {
+                init(); // Call page-specific init()
+              }
+            };
+
+            document.body.appendChild(script);
+          });
+
+        // Load CSS
+        document
+          .getElementById("page-style")
+          .setAttribute("href", `${page}.css`);
+      }
+
+      function toggleSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.classList.toggle("active");
+      }
+
+      window.onload = function () {
+        change(".dashboard");
+        loadContent("dashboard");
+      };
+    </script>
+  </body>
+</html>

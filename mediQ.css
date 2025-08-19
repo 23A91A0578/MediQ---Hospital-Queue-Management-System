@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #f9fbfd;
+  color: #222;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: white;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0b4dc4;
+}
+
+.logo-icon {
+  background: #0b4dc4;
+  color: white;
+  padding: 3px 6px;
+  border-radius: 4px;
+  margin-right: 6px;
+}
+
+.navbar nav a {
+  margin: 0 15px;
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.profile-icon {
+  background-color: #0b4dc4;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 60px 80px;
+  align-items: flex-start;
+}
+
+.form-section {
+  max-width: 380px;
+}
+
+.form-section h1 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.appointment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.appointment-form label {
+  font-weight: 500;
+}
+
+.appointment-form select,
+.appointment-form input[type="text"],
+.appointment-form input[type="date"] {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  width: 100%;
+}
+
+.date-time {
+  display: flex;
+  gap: 15px;
+}
+
+.date-time > div {
+  flex: 1;
+}
+
+.appointment-form button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.appointment-form button:hover {
+  background: #03356c;
+}
+
+.illustration img {
+  width: 400px;
+  max-width: 100%;
+}
